@@ -1,0 +1,32 @@
+def record_grades(student_name):
+    num_exams = int(input("How many grades does {} have?".format(student_name)))
+
+    if not num_exams:
+        return
+
+    counter = 0
+    test_num = []  # stackoverflow
+    while counter < num_exams:
+        test_num.append(int(input("Enter grade {}:".format(counter))))  # stackoverflow
+        counter += 1
+
+    avg = sum(test_num) / num_exams
+
+    if avg >= 90:
+        print(student_name, "made A")
+    elif avg >= 80:
+        print(student_name, "made B")
+    elif avg >= 70:
+        print(student_name, "made C")
+    elif avg >= 60:
+        print(student_name, "made D")
+    else:
+        print(student_name, "made F")
+
+
+while True:
+    student_name = input("Enter the student's name:")
+    if student_name == "-1":
+        break
+    else:
+        record_grades(student_name)
